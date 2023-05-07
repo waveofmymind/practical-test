@@ -1,6 +1,6 @@
 package wave.practicaltest.unit;
 
-import org.assertj.core.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 import wave.practicaltest.unit.beverage.Americano;
 import wave.practicaltest.unit.beverage.Latte;
