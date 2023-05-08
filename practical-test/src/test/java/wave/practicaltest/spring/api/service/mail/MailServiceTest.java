@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -14,6 +15,7 @@ import wave.practicaltest.spring.domain.history.mail.MailSendHistoryRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -31,8 +33,10 @@ class MailServiceTest {
     @Test
     void sendMail() {
         //given
-        when(mailSendClient.sendEmail(any(String.class), any(String.class), any(String.class), any(String.class)))
-                .thenReturn(true);
+//        when(mailSendClient.sendEmail(any(String.class), any(String.class), any(String.class), any(String.class)))
+//                .thenReturn(true);
+        given(mailSendClient.sendEmail(any(String.class), any(String.class), any(String.class), any(String.class)))
+                .willReturn(true);
 
         //when
         boolean result = mailService.sendMail("", "", "", "");
