@@ -8,6 +8,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import wave.practicaltest.spring.IntegrationTestSupport;
 import wave.practicaltest.spring.client.mail.MailSendClient;
 import wave.practicaltest.spring.domain.history.mail.MailSendHistory;
 import wave.practicaltest.spring.domain.history.mail.MailSendHistoryRepository;
@@ -28,8 +29,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static wave.practicaltest.spring.domain.product.ProductSellingStatus.SELLING;
 import static wave.practicaltest.spring.domain.product.ProductType.HANDMADE;
 
-@SpringBootTest
-class OrderStatisticsServiceTest {
+class OrderStatisticsServiceTest extends IntegrationTestSupport {
 
     @Autowired
     private OrderStatisticsService orderStatisticsService;
@@ -45,8 +45,6 @@ class OrderStatisticsServiceTest {
     @Autowired
     private MailSendHistoryRepository mailSendHistoryRepository;
 
-    @MockBean
-    private MailSendClient mailSendClient;
 
     @AfterEach
     void tearDown() {
