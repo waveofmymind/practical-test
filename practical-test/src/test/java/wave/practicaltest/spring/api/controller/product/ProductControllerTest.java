@@ -10,6 +10,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import wave.practicaltest.spring.ControllerTestSupport;
 import wave.practicaltest.spring.api.controller.product.dto.request.ProductCreateRequest;
 import wave.practicaltest.spring.api.service.product.ProductService;
 import wave.practicaltest.spring.api.service.product.response.ProductResponse;
@@ -24,16 +25,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(controllers = ProductController.class)
-class ProductControllerTest {
+class ProductControllerTest extends ControllerTestSupport {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-    @MockBean
-    private ProductService productService;
 
     @DisplayName("신규 상품을 등록한다.")
     @Test
