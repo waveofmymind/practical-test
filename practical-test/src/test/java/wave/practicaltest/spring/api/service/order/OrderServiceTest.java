@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import wave.practicaltest.spring.IntegrationTestSupport;
 import wave.practicaltest.spring.api.controller.order.request.OrderCreateRequest;
 import wave.practicaltest.spring.api.service.order.response.OrderResponse;
 import wave.practicaltest.spring.domain.order.OrderRepository;
@@ -23,9 +24,8 @@ import static org.assertj.core.api.Assertions.*;
 import static wave.practicaltest.spring.domain.product.ProductSellingStatus.*;
 import static wave.practicaltest.spring.domain.product.ProductType.*;
 
-@ActiveProfiles("test")
-@SpringBootTest
-class OrderServiceTest {
+
+class OrderServiceTest extends IntegrationTestSupport {
 
     @Autowired
     private ProductRepository productRepository;

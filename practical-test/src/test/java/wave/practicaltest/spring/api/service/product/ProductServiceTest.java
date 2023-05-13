@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import wave.practicaltest.spring.IntegrationTestSupport;
 import wave.practicaltest.spring.api.controller.product.dto.request.ProductCreateRequest;
 import wave.practicaltest.spring.api.service.product.response.ProductResponse;
 import wave.practicaltest.spring.domain.product.Product;
@@ -19,9 +20,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static wave.practicaltest.spring.domain.product.ProductSellingStatus.*;
 import static wave.practicaltest.spring.domain.product.ProductType.HANDMADE;
 
-@ActiveProfiles("test")
-@SpringBootTest
-class ProductServiceTest {
+
+class ProductServiceTest extends IntegrationTestSupport {
 
     @Autowired
     private ProductService productService;

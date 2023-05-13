@@ -5,16 +5,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
+import wave.practicaltest.spring.IntegrationTestSupport;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 import static wave.practicaltest.spring.domain.product.ProductSellingStatus.*;
 import static wave.practicaltest.spring.domain.product.ProductType.*;
-@ActiveProfiles("test")
-@DataJpaTest
-class ProductRepositoryTest {
+
+@Transactional
+class ProductRepositoryTest extends IntegrationTestSupport {
 
     @Autowired
     private ProductRepository productRepository;
