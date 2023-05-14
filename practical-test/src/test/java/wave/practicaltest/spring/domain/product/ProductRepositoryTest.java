@@ -88,7 +88,7 @@ class ProductRepositoryTest extends IntegrationTestSupport {
         String latestProductNumber = productRepository.findLatestProductNumber();
 
         //then
-        assertThat(latestProductNumber).isNull();
+        assertThat(latestProductNumber).isEqualTo(null);
 
     }
 

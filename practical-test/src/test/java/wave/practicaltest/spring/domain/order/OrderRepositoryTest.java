@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
 import wave.practicaltest.spring.IntegrationTestSupport;
 import wave.practicaltest.spring.domain.product.Product;
 import wave.practicaltest.spring.domain.product.ProductRepository;
@@ -17,7 +18,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static wave.practicaltest.spring.domain.product.ProductSellingStatus.SELLING;
 
-
+@Transactional
 class OrderRepositoryTest extends IntegrationTestSupport {
 
     @Autowired
