@@ -3,6 +3,7 @@ package wave.practicaltest.spring.domain.order;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.transaction.annotation.Transactional;
 import wave.practicaltest.spring.domain.product.Product;
 import wave.practicaltest.spring.domain.product.ProductType;
 
@@ -13,6 +14,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static wave.practicaltest.spring.domain.product.ProductSellingStatus.SELLING;
 
+@Transactional
 class OrderTest {
 
     @DisplayName("주문 생성시 상품 리스트에서 주문의 총 금액을 계산한다.")
